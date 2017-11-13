@@ -1,23 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
-using System.Collections;
-using System.Data.SqlClient;
-using System.Data.Sql;
-using System.Data.Odbc;
-using System.Net.Sockets;
 using MySql.Data.MySqlClient;
 using System.Data.Common;
 using TrofeulNational.DAL;
-using TrofeulNational;
-using TrofeulNational.Apps;
 
 namespace TrofeulNational.Concurent
 {
-    [Serializable]
+    //[Serializable]
     public class Jucator
     {
 

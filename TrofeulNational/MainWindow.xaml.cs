@@ -1,23 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.SqlClient;
-using System.Data.Sql;
-using System.Data.Odbc;
-using System.Net.Sockets;
-using MySql.Data.MySqlClient;
 using TrofeulNational.DAL;
+using System.Configuration;
 
 namespace TrofeulNational
 {
@@ -35,9 +19,11 @@ namespace TrofeulNational
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            //Console.WriteLine( ConfigurationManager.AppSettings.Get("Database, Address"));
             con = DBFactory.getConnection(DBConection.MyDBType.MySQL);
             con.Open("localhost", "root", "r@1n3r'5M@r1@", 3306, "TN");
+            
 
 
         }
