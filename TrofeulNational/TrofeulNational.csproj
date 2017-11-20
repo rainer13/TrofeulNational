@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="Concurent\MPManager.cs" />
     <Compile Include="Concurent\PlayerException.cs" />
+    <Compile Include="ConnectionNotConfigured.cs" />
     <Compile Include="DAL\ConexiuneMySQL.cs" />
     <Compile Include="DAL\DBConection.cs" />
     <Compile Include="DAL\DBFactory.cs" />
@@ -191,7 +192,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="LinqToDB.Templates\CopyMe.MySql.tt.txt" />

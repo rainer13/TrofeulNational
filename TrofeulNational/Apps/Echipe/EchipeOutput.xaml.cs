@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace TrofeulNational.Apps
@@ -15,7 +16,16 @@ namespace TrofeulNational.Apps
 
         public void Show(List<Echipa> echipe)
         {
-            //listaEchipe1.
+            Console.WriteLine(this.GetType().ToString());
+            Console.WriteLine(listaEchipe1.GetType().ToString());
+            listaEchipe1.
+        }
+
+        public void print(List<Echipa> echipe)
+        {
+            Console.WriteLine(this.GetType().ToString());
+            foreach (Echipa ee in echipe)
+                Console.WriteLine(ee.getNume());
         }
     }
 }

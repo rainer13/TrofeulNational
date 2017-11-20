@@ -9,6 +9,7 @@
     <Grid>
         <Grid Name="listaEchipe" Height="192" Margin="37,44,21,0" VerticalAlignment="Top"/>
         <DataGrid Name="listaEchipe1" HorizontalAlignment="Left" Height="100" Margin="121,274,0,0" VerticalAlignment="Top" Width="277"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="153,92,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

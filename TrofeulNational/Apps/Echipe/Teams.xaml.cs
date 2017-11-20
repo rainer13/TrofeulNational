@@ -50,7 +50,7 @@ namespace TrofeulNational
             else
             {
 
-                Log.Text = "Eroare";
+                Log.Text = "Eroare ";
                 if (!ee.isValid())
                     Log.Text += "echipa are un numar incorect de jucatori";
                 else
@@ -85,6 +85,9 @@ namespace TrofeulNational
             foreach (Echipa ee in echipe.getListaConcurenti())
                 s += ee.getNume() + " " + ee.getTotalMP() + "\n";
             Log.Text = s;
+            EchipeOutput eo = new EchipeOutput();
+            eo.print(echipe.getListaConcurenti());
+            eo.Show(echipe.getListaConcurenti());
         }
     }
 }

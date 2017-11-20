@@ -19,10 +19,29 @@ namespace TrofeulNational
         public MainWindow()
         {
             InitializeComponent();
-
-            //Console.WriteLine( ConfigurationManager.AppSettings.Get("Database, Address"));
-            con = DBFactory.getConnection(DBConection.MyDBType.MySQL);
-            con.Open("localhost", "root", "r@1n3r'5M@r1@", 3306, "TN");
+            string server, user, pass, port, db, type;
+            var conMng = ConfigurationManager.GetSection("ConnectionManagerDatabaseServers") as System.Collections.Specialized.NameValueCollection;
+            if (conMng != null)
+            {
+                //vezi http:/ 
+                //blog.danskingdom.com
+                //adding-and-accessing-custom-sections-in-your-c-app-config
+                server = conMng["Server"].ToString();
+                user = conMng["User"].ToString();
+                pass = conMng["Password"].ToString();
+                port = conMng["Port"].ToString();
+                db = conMng["NumeDB"].ToString();
+                type = conMng["tip"].ToString();
+                //Console.WriteLine(server + " " + user + " " + pass + " " + port + " " + db + " " + db);
+                switch (type)
+                {
+                    case "MySQL": con = DBFactory.getConnection(DBConection.MyDBType.MySQL); break;
+                    default: con = null; throw new ConnectionNotConfiguredException();
+                }
+                con.Open(server, user, pass, Int32.Parse(port), db);
+            }
+            else
+                throw new ConnectionNotConfiguredException();
             
 
 
